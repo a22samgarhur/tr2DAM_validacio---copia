@@ -3,6 +3,7 @@
     <v-btn v-for="item in ['A','B','C','D']" @click="recuperaBebidas(item)" v-bind:key="item.strDrink" >
       {{ item }}
     </v-btn>
+    <Bebidas v-for="item in bebidas" :datos="item" />
 
    
 </div>
@@ -10,14 +11,17 @@
 </template>
 
 <script>
+import Bebidas from './cmpBebidas.vue';
   
   export default {
+    name: 'cmpBuscador',
     data() {
       return {
         bebidas: []
       }
     },
     components: {
+      Bebidas
    
     },
     methods: {
